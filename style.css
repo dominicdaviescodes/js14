@@ -24,7 +24,10 @@ div {
   max-width: 700px;
 }
 
-h1,h2,h3,p {
+h1,
+h2,
+h3,
+p {
   background-color: #fdfdff;
   padding: 20px;
   text-align: center;
@@ -40,3 +43,6 @@ h1,h2,h3,p {
   border-radius: 8px;
 }
 
+p {
+  text-align: left;
+}

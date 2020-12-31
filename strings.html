@@ -45,7 +45,66 @@
         <img src="./images/str17.JPG" alt="a slide on strings">
         <p>replace can be very powerful with regEx.</p>
         <img src="./images/str18.JPG" alt="a slide on strings">
-        <img src="./images/str1.JPG" alt="a slide on strings">
+        <h3>157. String Template Literals -SUPER USEFUL</h3>
+        <p>used to concatenate, with extra spaces etc.</p>
+        <p>With Template Literals we embed variables directly in a string.</p>
+        <img src="./images/str21.JPG" alt="a slide on strings">
+        <img src="./images/str22.JPG" alt="a slide on strings">
+        <img src="./images/str23.JPG" alt="a slide on strings">
+        <h3>null and undefined are actual values.</h3>
+        <p>undefined is when js doesn't know the value as it's not defined</p>
+        <img src="./images/str19.JPG" alt="a slide on strings">
+        <p>null is intentionally nothing there. Nothingness. You might set as a value but won't run into it much.</p>
+        <img src="./images/str20.JPG" alt="a slide on strings">
+        <h2>Math object</h2>
+
+        <img src="./images/str24.JPG" alt="a slide on strings">
+        <h3>Math.floor()</h3>
+        <p>chops off the decimal so it's not rounded</p>
+        <p class="code"><code>Math.floor( 45.95); // 45  <br>
+              Math.floor( 45.05); // 45  <br>
+              Math.floor( 4 ); // 4 <br>
+              Math.floor(-45.05); // -46  <br>
+              Math.floor(-45.95); // -46
+        </code></p>
+        <h2>The Math.ceil() function always rounds a number up to the next largest integer.</h2>
+        <p class="code"><code>console.log(Math.ceil(.95));  <br>
+        // expected output: 1  <br>
+        
+        console.log(Math.ceil(4));  <br>
+        // expected output: 4  <br>
+        
+        console.log(Math.ceil(7.004));  <br>
+        // expected output: 8  <br>
+        
+        console.log(Math.ceil(-7.004));  <br>
+        // expected output: -7
+</code></p>
+        <h2>Math.random()</h2>
+        <img src="./images/str25.JPG" alt="a slide on strings">
+        <p>The Math.random() function returns a floating-point, pseudo-random number in the range 0 to less than 1
+          (inclusive of 0,
+          but not 1) with approximately uniform distribution over that range — which you can then scale to your desired
+          range. The
+          implementation selects the initial seed to the random number generation algorithm; it cannot be chosen or
+          reset by the
+          user.</p>
+        <p class="code"><code>function getRandomInt(max) { <br>
+        return Math.floor(Math.random() * Math.floor(max)); <br>
+        } <br>
+        
+        console.log(getRandomInt(3)); <br>
+        // expected output: 0, 1 or 2 <br>
+        
+        console.log(getRandomInt(1)); <br>
+        // expected output: 0 <br>
+        
+        // very common
+        console.log(Math.random()); <br>
+        // expected output: a number from 0 to &#60;1</code></p>
+        <p>if you want random number 0 to 5:</p>
+        <p>Math.floor(Math.random() * 5).  but this really gives you 0 to 4 so add 1.</p>
+        <p>Math.floor(Math.random() * 5) + 1. now it's 1 to 5.</p>
       </div>
     </div>
     <script src="app.js"></script>
