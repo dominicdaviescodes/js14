@@ -1,3 +1,20 @@
+
+EX.24
+const mystery = 'Pira57'; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
+
+```js
+// LEAVE THIS CODE ALONE! (pretty please)
+if (mystery[0] === 'P' && mystery.length > 5 && mystery.indexOf('7') !== -1) {
+  console.log('it\'s running');
+  console.log('YOU GOT IT!!!');
+}
+```
+* The indexof() method returns -1 if the value is not found.
+* Example: If mystery = password. mystery.indexOf('7') would result -1, since there is no value 7 in the string.
+* So "mystery.indexOf('7') !== -1" means the mystery string should contain value 7.
+
+
+
 Ex.23
 Change the value of num, so that "YOU GOT ME!" prints out
 const num = 0; // THIS IS THE ONLY LINE YOU SHOULD CHANGE :)

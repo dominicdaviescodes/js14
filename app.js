@@ -1,3 +1,12 @@
+// EX.24
+// const mystery = 'Pira57'; //CHANGE THIS VALUE TO MAKE THE CONDITIONAL BELOW TRUE
+
+// LEAVE THIS CODE ALONE! (pretty please)
+// if (mystery[0] === 'P' && mystery.length > 5 && mystery.indexOf('7') !== -1) {
+//   console.log('it\'s running');
+//   console.log('YOU GOT IT!!!');
+// }
+
 // Ex.23
 // Change the value of num, so that "YOU GOT ME!" prints out
 // const num = 102; // THIS IS THE ONLY LINE YOU SHOULD CHANGE :)
