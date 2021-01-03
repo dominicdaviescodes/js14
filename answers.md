@@ -72,8 +72,49 @@ numLives--;
 18.  What is BigInt used for? How is it designated?
 ## Section 15. Strings and more
 19.  What are back tics called? How do they differ from regular single or double quotes?
-20.  Strings are indexed.  What is the index of k in the str 'chicken'. // 4
-21.  Mutable is a type of variable that can be changed. In JavaScript, primitive values are not mutable but what are? 
+20.  what are Template literals?
+
+Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.
+
+They were called "template strings" in prior editions of the ES2015 specification.
+
+```js
+`string text`
+
+`string text line 1
+ string text line 2`
+
+`string text ${expression} string text`
+
+tag`string text ${expression} string text`
+```
+Template literals are enclosed by the backtick (` `) (grave accent) character instead of double or single quotes.
+
+Template literals can contain placeholders. These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between the backticks (` `) get passed to a function.
+
+The default function just concatenates the parts into a single string.
+
+21. Explain Expression interpolation
+In order to embed expressions within normal strings, you would use the following syntax:
+```js
+let a = 5;
+let b = 10;
+console.log('Fifteen is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.');
+// "Fifteen is 15 and
+// not 20."
+```
+Now, with template literals, you are able to make use of the syntactic sugar, making substitutions like this more readable:
+
+```js
+let a = 5;
+let b = 10;
+console.log(`Fifteen is ${a + b} and
+not ${2 * a + b}.`);
+// "Fifteen is 15 and
+// not 20."
+```
+22.  Strings are indexed.  What is the index of k in the str 'chicken'. // 4
+23.  .  Mutable is a type of variable that can be changed. In JavaScript, primitive values are not mutable but what are? 
     * only objects and arrays are mutable
     * Strings and Numbers are Immutable.  
 ```js
@@ -114,18 +155,136 @@ console.log(foo);               // ["plugh"]
 bar = bar.toUpperCase();       // BAZ
 ```
 
-22. what value do we get when we try this: animal[99]
+1.  what value do we get when we try this: animal[99]
   * we get the special value 'undefined'
   * js is telling us 'I have nothing there' 'I don't know what you want'.
-23.  Create a sample back tic expression showing the syntax of how it is used.
-24. What is a return called when it represents nothing, empty, or value unknown?
-25. When a variable is declared and no value is assigned, what is its value?
-26. What is a primitive datatype?
-27. I have a variable called x that is assigned a value from an expression. Write the script that will tell me what datatype x is.
-28. Null is an object datatype. True or False
-29. Prompt and alert are modal functions. What does this mean?
-30. The look and location of Prompt and alert is determined by the browser and can NOT be changed. True or False
-31. Write a prompt that asks a user to enter a password where “password” is the default value. 
+24.  What is Type coercion?
+Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Type conversion is similar to type coercion because they both convert values from one data type to another with one key difference — type coercion is implicit - suggested though not directly expressed.
+ -- whereas type conversion can be either implicit or explicit. 
+ in this example js makes them both a string to add them together.
+```js
+let result = 1 + 'hello';
+// '1hello'
+```
+What does the following return?
+```js
+    let year = "1998";
+    year + 1;
+// '19981'
+```
+25.  Create a sample back tic expression showing the syntax of how it is used.
+
+26. What is a return called when it represents nothing, empty, or value unknown?
+## String Methods
+27. Explain str.includes() 
+Check if string contains specified character(s).
+```js
+  const str = 'JavaScript is amazing';
+
+  console.log(str.includes('Script')); // true
+  console.log(str.includes('script')); // false
+  console.log(str.includes(' ')); // true
+  console.log(str.includes('array')); // false
+```
+28. Explain str.slice()
+
+Copy some part of string without modifying the original one.
+The slice() method extracts a section of a string and returns it as a new string, without modifying the original string.
+```js
+const str = 'The quick brown fox jumps over the lazy dog.';
+
+console.log(str.slice(31));
+// expected output: "the lazy dog." return starts at 31 until end.
+
+console.log(str.slice(4, 19));
+// expected output: "quick brown fox"
+
+console.log(str.slice(-4));
+// expected output: "dog."
+
+console.log(str.slice(-9, -5));
+// expected output: "lazy"
+
+ const str = 'JavaScript is amazing';
+
+  // Default start index is 0 until end
+  console.log(str.slice()); // 'JavaScript is amazing'
+
+  // start copy at index 4
+  console.log(str.slice(4)); // 'Script is amazing'
+
+  // end copy at index 10(character at this index will not be included)
+  console.log(str.slice(0, 10)); // 'JavaScript'
+```
+28. When a variable is declared and no value is assigned, what is its value?
+29. How do you update parts of a string?
+
+You can replace one substring inside a string with another substring using the replace() method. This works very at a basic level, although there are some advanced things you can do with it that we won't go into yet.
+
+It takes two parameters — the string you want to replace, and the string you want to replace it with. Try this example:
+```js
+let browserType = 'mozilla';
+// replace moz with van
+browserType.replace('moz','van');
+```
+This returns "vanilla" in the console. But if you check the value of browserType, it is still "mozilla". To actually update the value of the browserType variable in a real program, you'd have to set the variable value to be the result of the operation; it doesn't just update the substring value automatically. So you'd have to actually write this: browserType = browserType.replace('moz','van');
+30. Explain str.trim()
+trim removes whitespace from start and end 
+
+```js
+let greeting = '   goodbye     ';
+greeting.trim() // 'goodbye';
+
+' asdfjkl  '.trim()
+// 'asdfjkl'
+
+const message = "    TASTE THE RAINBOW!  "; 
+let whisper = message.trim().toLowerCase();
+
+```
+30. What is a primitive datatype?
+31. Extract board from skateboard. Then replace the o with e.
+
+```js
+let str = 'skateboard';
+let str2 = str.slice(-5);
+str2.replace('o','e');
+```
+32. If indexof() returns a value of -1 what does it mean?
+
+If the substring is not found inside the main string, it returns a value of -1.
+
+32. Find a substring inside a string and extract it
+
+Sometimes you'll want to find if a smaller string is present inside a larger one (we generally say if a substring is present inside a string). This can be done using the indexOf() method, which takes a single parameter — the substring you want to search for.
+
+If the substring is found inside the main string, it returns a number representing the index position of the substring — which character number of the main string the substring starts at. If the substring is not found inside the main string, it returns a value of -1.
+
+
+```js
+
+
+```
+
+1.  Chain/combine trim() and toUpperCase()
+
+```js
+let greeting = '  Hello again  ';
+greeting.trim().toUpperCase();
+// 'HELLO AGAIN'
+```
+32. I have a variable called x that is assigned a value from an expression. Write the script that will tell me what datatype x is.
+33. Explain Null.
+
+The value null represents the intentional absence of any object value. It is one of JavaScript's primitive values and is treated as falsy for boolean operations.
+34. Null is an object datatype. True or False
+
+```js
+typeof null    // "object" (not "null" for legacy reasons)
+```
+35. Prompt and alert are modal functions. What does this mean?
+36. The look and location of Prompt and alert is determined by the browser and can NOT be changed. True or False
+37. Write a prompt that asks a user to enter a password where “password” is the default value. 
 ```js
 
 ```
@@ -318,9 +477,113 @@ Key : value
 104. You have an array that contains NaN. Assume there is a while loop passing through this array called checkNums. Write the script that will stop this array if it finds NaN.
 105. What does parseInt do? What will return if parseInt('hello'); is encountered?
 106. What does Math.random() generate?
+
+
 107. Write a function to get a random integer between 2 values.
-108. What is the syntax of a for of loop? How does it differ from a for loop?
-109. Write a loop to iterate over this object and return the item and price. It should output each item. (Ex. Burger is $6 dollars)
+108. What could pollute the namespace?
+as an example Math has a lot of functionality bundled into it instead of using a higher level name like Math itself. So we get a bunch of stuff like Math.PI or Math.round etc..
+
+109. What is the syntax of a for of loop? How does it differ from a for loop?
+110. The Math.ceil() function? 
+ always rounds a number up to the next largest integer.
+ ```js
+console.log(Math.ceil(.95));
+// expected output: 1
+
+console.log(Math.ceil(4));
+// expected output: 4
+
+console.log(Math.ceil(7.004));
+// expected output: 8
+
+console.log(Math.ceil(-7.004));
+// expected output: -7
+
+ ```
+111. The Math.random()? 
+ function returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1 more like 0.999999999) with approximately uniform distribution over that range — which you can then scale to your desired range. 
+ 
+ The implementation selects the initial seed to the random number generation algorithm; it cannot be chosen or reset by the user.
+
+ ```js
+ function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+console.log(getRandomInt(3));
+// expected output: 0, 1 or 2
+
+console.log(getRandomInt(1));
+// expected output: 0
+
+console.log(Math.random());
+// expected output: a number from 0 to <1
+```
+1.   Get a random number between 1 (inclusive) and 6
+```js
+Math.random() * 5;
+// 4.2345666
+// 0.8345435
+
+// need to floor it
+
+Math.floor(Math.random() * 5);
+// 0
+// 3
+
+// starts at zero to 4.  so we need to add 1
+
+Math.floor(Math.random() * 5) + 1;
+// 0
+// 3
+// 6
+```
+random number between 1 and 10??
+```js
+Math.floor(Math.random() * 10) + 1;
+// 7
+```
+
+random number between 20 and 22?
+so the range is 3. and it starts at 20
+```js
+Math.floor(Math.random() * 3) + 20;
+// 21
+```
+2.    Get a random number between 0 (inclusive) and 1 (exclusive)
+
+```js
+function getRandom() {
+  return Math.random();
+}
+```
+
+3. Str template literal ex.
+```js
+const die1 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
+const die2 = Math.floor(Math.random() * 6) + 1; //random number from 1-6
+let roll = `you rolled a ${die1} and a ${die2}. they sume to ${die1 + die2};
+```
+4.   The Math.floor() function?
+
+returns the largest integer less than or equal to a given number.
+Rounds down, chops off the decimal
+```js
+console.log(Math.floor(5.95));
+// expected output: 5
+
+console.log(Math.floor(5.05));
+// expected output: 5
+
+console.log(Math.floor(5));
+// expected output: 5
+
+console.log(Math.floor(-5.05));
+// expected output: -6
+
+}
+```
+1.   Write a loop to iterate over this object and return the item and price. It should output each item. (Ex. Burger is $6 dollars)
 ```js
 Const food = {
 'Burger' : 6,
@@ -329,19 +592,19 @@ Const food = {
 'Beans' : 3
 }
 ```
-110.   What 3 other ways can you iterate over an object, and what do they return?
-111.   Write a for of loop that assigns a new array called score filled with the values of an object literal called testScores.
-112. What is a function? What is the syntax for defining a function?
-113. Its considered good programming practice to define functions before calling them. True or False
-114. What is the difference between an argument and a parameter?
-116. Why should you use return in your function? What does return do when it is encountered?
-117.   How many values can you return from a function?
-118.   What is the return value for this statement?
+1.     What 3 other ways can you iterate over an object, and what do they return?
+2.     Write a for of loop that assigns a new array called score filled with the values of an object literal called testScores.
+3.   What is a function? What is the syntax for defining a function?
+4.   Its considered good programming practice to define functions before calling them. True or False
+5.   What is the difference between an argument and a parameter?
+6.   Why should you use return in your function? What does return do when it is encountered?
+7.     How many values can you return from a function?
+8.     What is the return value for this statement?
 ```js
 Add(add(1,5),9);
 ```
-119.   ____________ is the location where a variable is defined and dictates where we have access to that variable.
-120.   
+1.     ____________ is the location where a variable is defined and dictates where we have access to that variable.
+2.     
 ```js let var = ['Hello','Goodbye','Greetings'];
 For (var of array=>{
 Console.log(array[var]);
@@ -349,7 +612,7 @@ Let var += 1;
 }
 This code will produce unexpected results. Explain why.
 ```
-121.   What is the difference between var , const and let with regard to Block Scope?
+1.     What is the difference between var , const and let with regard to Block Scope?
 * Const - constant it's just like let but can't change the value. 
   * you can recall at any time. but can't be updated
   * good for storing things we know won't change like days of week = 7, pi = 3.14.
