@@ -1,5 +1,25 @@
 # Javascript Basics with Answers
 
+
+
+## Section 16: JavaScript Decision Making
+
+1. what are comparison operators?
+
+Simply put: <>, <=, >=, and equality operators, ==, !==, ===
+A comparison operator compares its operands and returns a logical value based on whether the comparison is true.
+
+The operands can be numerical, string, logical, or object values. Strings are compared based on standard lexicographical ordering, using Unicode values.
+
+In most cases, if the two operands are not of the same type, JavaScript attempts to convert them to an appropriate type for the comparison. This behavior generally results in comparing the operands numerically. The sole exceptions to type conversion within comparisons involve the === and !== operators, which perform strict equality and inequality comparisons. These operators do not attempt to convert the operands to compatible types before checking equality. The following table describes the comparison operators in terms of this sample code:
+
+2. Type coercion?
+
+When we compare 2 different types js will convert them then compare them.
+```js
+1 == '1';
+// true
+```
 ## Section 14. JS Basics
 1. What is a variable.
 * We give a name to a value which we store and can refer back to it later.
