@@ -1,3 +1,11 @@
+// let num = 0;
+// while (num < 10) {
+//   num++;
+//   console.log(num);
+// }
+
+
+
 // let count = 0;
 // while (count < 10) {
 //     count++;
@@ -12,6 +20,17 @@
 // }
 // console.log("CONGRATS YOU GOT THE SECRET!!!")
 
+
+// enter password keep asking if false
+// const secret = 'BabyHippo';
+// let userInput = prompt('What is the secret?');
+// while(userInput !== secret){
+    
+//     userInput =  prompt('What is the secret?')
+// }
+// console.log('congrats')
+
+
 // let input = prompt("Hey, say something!")
 // while (true) {
 //     input = prompt(input);
@@ -24,29 +43,30 @@
 //     if (i === 100) break;
 // }
 
-let maximum = parseInt(prompt("Enter the maximum number!"));
-while (!maximum) {
-    maximum = parseInt(prompt("Enter a valid number!"));
-}
 
-const targetNum = Math.floor(Math.random() * maximum) + 1;
+// let maximum = parseInt(prompt("Enter the maximum number!"));
+// while (!maximum) {
+//     maximum = parseInt(prompt("Enter a valid number!"));
+// }
 
-let guess = parseInt(prompt("Enter your first guess!"));
-let attempts = 1;
+// const targetNum = Math.floor(Math.random() * maximum) + 1;
 
-while (parseInt(guess) !== targetNum) {
-    if (guess === 'q') break;
-    attempts++;
-    if (guess > targetNum) {
-        guess = prompt("Too high! Enter a new guess:");
-    } else {
-        guess = prompt("Too low! Enter a new guess:");
-    }
-}
+// let guess = parseInt(prompt("Enter your first guess!"));
+// let attempts = 1;
 
-if (guess === 'q') {
-    console.log("OK, YOU QUIT!")
-} else {
-    console.log("CONGRATS YOU WIN!")
-    console.log(`You got it! It took you ${attempts} guesses`)
-}
+// while (parseInt(guess) !== targetNum) {
+//     if (guess === 'q') break;
+//     attempts++;
+//     if (guess > targetNum) {
+//         guess = prompt("Too high! Enter a new guess:");
+//     } else {
+//         guess = prompt("Too low! Enter a new guess:");
+//     }
+// }
+
+// if (guess === 'q') {
+//     console.log("OK, YOU QUIT!")
+// } else {
+//     console.log("CONGRATS YOU WIN!")
+//     console.log(`You got it! It took you ${attempts} guesses`)
+// }
