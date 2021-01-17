@@ -14,9 +14,9 @@ const testScores = {
 // USING FOR...IN TO ITERATE AN OBJECT
 // ===================================
 
-for (let person in testScores) {
-    console.log(`${person} scored ${testScores[person]}`);
-}
+// for (let person in testScores) {
+//     console.log(`${person} scored ${testScores[person]}`);
+// }
 
 // ==============================================
 // Using Object methods to iterate
